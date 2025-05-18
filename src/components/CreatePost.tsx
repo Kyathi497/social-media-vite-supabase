@@ -28,8 +28,8 @@ const createPost = async (post: PostInput, imageFile: File) => {
     .from("posts")
     .insert({ ...post, image_url: publicURLData.publicUrl });
 
-  if (error) throw new Error(error.message);
-
+  if (error) {console.error("supabase insert error:", error); throw new Error(error.message);
+  }
   return data;
 };
 

@@ -9,7 +9,7 @@ interface CommunityInput{
 }
 
 const createCommunity = async (community: CommunityInput) => {
-  const {error,data} = await supabase.from("communites").insert(community);
+  const {error,data} = await supabase.from("communities").insert(community);
 
   if (error) throw new Error(error.message);
   return data;
